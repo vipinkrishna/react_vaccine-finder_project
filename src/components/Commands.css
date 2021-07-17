@@ -5,14 +5,25 @@
 
 .buttons {
     margin         : auto;
-    width          : 70%;
+    width          : 80%;
     display        : flex;
     justify-content: space-between;
     height         : 70px;
 }
 
 .find-button {
-    width           : 40%;
+    width           : 48%;
+    border          : none;
+    border-radius   : 4px;
+    background-color: white;
+    padding         : 10px;
+    outline         : none;
+    cursor          : pointer;
+    transition      : background .2s ease;
+}
+
+.stop-button {
+    width           : 48%;
     border          : none;
     border-radius   : 4px;
     background-color: white;
@@ -25,17 +36,6 @@
 .find-button:active {
     background-color: green;
     color           : white;
-}
-
-.stop-button {
-    width           : 40%;
-    border          : none;
-    border-radius   : 4px;
-    background-color: white;
-    padding         : 10px;
-    outline         : none;
-    cursor          : pointer;
-    transition      : background .2s ease;
 }
 
 .stop-button:active {

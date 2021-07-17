@@ -15,8 +15,6 @@ function Dashboard() {
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
 
-  // document.body.requestFullscreen()
-
   const findHandler = () => {
     if (processing) {
       return
