@@ -1,5 +1,7 @@
-TEXTBOX comma pincodes / chips
-SELECT age 18 40 45
-SELECT dose FIRST SECOND
-BUTTON find
-BUTTON stop
+done TEXTBOX comma pincodes / chips
+done SELECT age 18 40 45
+done SELECT dose FIRST SECOND
+done BUTTON find
+done BUTTON stop
+
+
