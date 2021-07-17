@@ -16,15 +16,8 @@ function Dashboard() {
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
 
-  function value(variable) {
-    console.log(`${Object.keys(variable)[0]} : ${Object.values(variable)[0]}`)
-  }
-
   const findHandler = () => {
     if (processing) {
-      console.log('Cannot Start...')
-      value({ processing })
-      value({ abort })
       return
     }
     processing = true
@@ -72,18 +65,12 @@ function Dashboard() {
         if (abort) {
           clearTimeout(clear)
           processing = false
-          console.log('1st loop...')
-          value({ processing })
-          value({ abort })
           break
         }
         for (let date of dates) {
           if (abort) {
             clearTimeout(clear)
             processing = false
-            console.log('2nd loop...')
-            value({ processing })
-            value({ abort })
             break
           }
           console.log(`%c${pincode} - %c${date}`, 'color: yellow', 'color: orange')
@@ -103,9 +90,6 @@ function Dashboard() {
             if (abort) {
               clearTimeout(clear)
               processing = false
-              console.log('3rd loop...')
-              value({ processing })
-              value({ abort })
               break
             }
             const { date: datestamp, address, pincode, available_capacity, available_capacity_dose1, available_capacity_dose2, vaccine, min_age_limit } = session
@@ -121,7 +105,7 @@ function Dashboard() {
               console.log("Available Capacity for DOSE 2: ", available_capacity_dose2)
               console.log("%c================================================================\n\n", 'color: yellow')
               beep(2000)
-            }  //IF
+            }
           }  //FOR
           await wait(200)  //SESSION
           clearTimeout(clear)
@@ -132,30 +116,18 @@ function Dashboard() {
         await wait(6000)  //PASS
         clearTimeout(clear)
       }
-      // pincodes.length && dates.length && age && dose && !abort && vaccineFinder()  //RECURSIVE
       if (pincodes.length && dates.length && age && dose && !abort) {
         processing = true
-        console.log('Starting vaccineFinder() again...')
-        value({ processing })
-        value({ abort })
         vaccineFinder()
       } else {
         clearTimeout(clear)
-        console.log('Exiting vaccineFinder()...')
         processing = false
-        value({ processing })
-        value({ abort })
       }
     })()
   }
 
   const stopHandler = () => {
-    // clearTimeout(clear)
-    // processing = false
     abort = true
-    console.log('Stop...')
-    value({ processing })
-    value({ abort })
     // window.location.reload()
   }
 
