@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.dashboard {
+  min-height: 100vh;
+  display   : grid;
+}

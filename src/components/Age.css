@@ -1,0 +1,16 @@
+.age {
+  background-color: orange;
+  display         : grid;
+}
+
+.age-select {
+  display         : block;
+  margin          : auto;
+  width           : 70%;
+  height          : 70px;
+  border          : 2px solid #ccc;
+  border-radius   : 4px;
+  background-color: white;
+  padding         : 10px 20px;
+  outline         : none;
+}
