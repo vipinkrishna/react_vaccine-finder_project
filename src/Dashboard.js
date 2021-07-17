@@ -114,7 +114,7 @@ function Dashboard() {
       }  //FOR
       console.log(`%c######################################################################\n\n`, 'color: red')
       if (!abort) {
-        await wait(6000)  //PASS
+        await wait(180000)  //PASS
         clearTimeout(clear)
       }
       if (pincodes.length && dates.length && age && dose && !abort) {
@@ -129,7 +129,8 @@ function Dashboard() {
 
   const stopHandler = () => {
     abort = true
-    // window.location.reload()
+    clearTimeout(clear)
+    window.location.reload()
   }
 
   return (

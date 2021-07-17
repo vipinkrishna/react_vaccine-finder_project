@@ -8,8 +8,9 @@
   margin       : auto;
   width        : 70%;
   height       : 70px;
-  border       : 2px solid #ccc;
+  border       : none;
+  outline      : none;
+  transition   : background .2s ease;
   border-radius: 4px;
   padding      : 10px 20px;
-  outline      : none;
 }

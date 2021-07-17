@@ -1,5 +1,5 @@
 .age {
-  background-color: orange;
+  background-color: lime;
   display         : grid;
 }
 
@@ -8,8 +8,8 @@
   margin          : auto;
   width           : 70%;
   height          : 70px;
-  border          : 2px solid #ccc;
   border-radius   : 4px;
+  border          : none;
   background-color: white;
   padding         : 10px 20px;
   outline         : none;
