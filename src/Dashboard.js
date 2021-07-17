@@ -5,7 +5,6 @@ import { default as Age } from './components/Age';
 import { default as Dose } from './components/Dose';
 import { default as Commands } from './components/Commands';
 
-
 function Dashboard() {
 
   let clear
@@ -15,6 +14,8 @@ function Dashboard() {
   const [pincodes, setPincodes] = useState([671531, 671316]);
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
+
+  // document.body.requestFullscreen()
 
   const findHandler = () => {
     if (processing) {

@@ -12,7 +12,7 @@
 }
 
 .find-button {
-    width           : 30%;
+    width           : 40%;
     border          : 2px solid #ccc;
     border-radius   : 4px;
     background-color: white;
@@ -20,11 +20,19 @@
     outline         : none;
 }
 
+.find-button:active {
+    background-color: red;
+}
+
 .stop-button {
-    width           : 30%;
+    width           : 40%;
     border          : 2px solid #ccc;
     border-radius   : 4px;
     background-color: white;
     padding         : 10px;
     outline         : none;
+}
+
+.stop-button:active {
+    background-color: red;
 }
