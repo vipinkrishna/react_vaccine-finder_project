@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import "./Age.css";
 
 const Age = ({ setAge }) => {
