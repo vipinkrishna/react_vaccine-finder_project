@@ -9,7 +9,6 @@ import { default as FindResults } from './components/FindResults';
 function Dashboard() {
   const [findData, setFindData] = useState([]);
 
-
   const [pincodes, setPincodes] = useState([671531, 671316]);
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
@@ -78,11 +77,11 @@ function Dashboard() {
             const { date: datestamp, name, address, pincode, available_capacity_dose1, available_capacity_dose2, vaccine, min_age_limit } = session
             if (min_age_limit === age && ((dose === "FIRST") ? available_capacity_dose1 : available_capacity_dose2) === 0) {
               setFindData(prevState => [...prevState, { datestamp, pincode, name, address, vaccine, min_age_limit, available_capacity_dose1, available_capacity_dose2 }])
-              beep(100)
+              beep(1000)
               await wait(1000)
             }
           }
-          await wait(200)
+          await wait(100)
         }
       }
       setProcessing(false)
