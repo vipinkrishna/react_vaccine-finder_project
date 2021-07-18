@@ -1,0 +1,65 @@
+.card {
+  background-color      : white;
+  /* display            : grid; */
+  margin                : 10px;
+  padding               : 10px;
+  /* border-radius      : 10px; */
+  /* border             : 2px solid green; */
+  color                 : rgba(0, 0, 0, 0.54);
+  box-shadow            : 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card>div {
+  margin          : 5px;
+  padding         : 5px;
+  background-color: ivory;
+}
+
+.card label {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.card>.date {
+  /* font-size  : 25px; */
+  color      : blue;
+  font-weight: bold;
+}
+
+.card>.vaccine {
+  /* font-size  : 25px; */
+  color      : red;
+  font-weight: bold;
+}
+
+.card>.pin {
+  color      : orange;
+  font-weight: bold;
+}
+
+.card>.name {
+  color      : indigo;
+  font-weight: bold;
+}
+
+.card>.address {
+  color      : magenta;
+  font-weight: bold;
+}
+
+.card>.ageLimit {
+  /* font-size  : 25px; */
+  color      : purple;
+  font-weight: bold;
+}
+
+.card>.dose1 {
+  /* font-size  : 25px; */
+  color      : green;
+  font-weight: bold;
+}
+
+.card>.dose2 {
+  /* font-size  : 25px; */
+  color      : green;
+  font-weight: bold;
+}

@@ -3,47 +3,24 @@
     display         : grid;
 }
 
-.buttons {
-    margin         : auto;
-    width          : 80%;
-    display        : flex;
-    justify-content: space-between;
-    height         : 70px;
-}
-
 .find-button {
-    width           : 48%;
+    display         : block;
+    margin          : auto;
+    width           : 50%;
+    height          : 70px;
     border          : none;
     border-radius   : 4px;
     background-color: white;
     padding         : 10px;
     outline         : none;
     cursor          : pointer;
-    transition      : background .2s ease;
-}
-
-.stop-button {
-    width           : 48%;
-    border          : none;
-    border-radius   : 4px;
-    background-color: white;
-    padding         : 10px;
-    outline         : none;
-    cursor          : pointer;
-    transition      : background .2s ease;
+    transition      : background .5s ease;
+    /* transition      : background 150ms 350ms ease; */
+    /* transition      : opacity 1s ease; */
+    font-size       : 20px;
 }
 
 .find-button:active {
     background-color: green;
     color           : white;
-}
-
-.stop-button:active {
-    background-color: red;
-    color           : white;
-}
-
-.find-button,
-.stop-button {
-    font-size: 20px;
 }

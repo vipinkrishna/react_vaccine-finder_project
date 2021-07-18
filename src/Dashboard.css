@@ -7,3 +7,10 @@
   min-height: 100vh;
   display   : grid;
 }
+
+.findResults {
+  /* background-color: red; */
+  display         : grid;
+  /* min-height: 100vh; */
+  /* padding: 10px; */
+}
