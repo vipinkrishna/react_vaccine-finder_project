@@ -6,7 +6,6 @@ import { default as Dose } from './components/Dose';
 import { default as Commands } from './components/Commands';
 import { default as FindResults } from './components/FindResults';
 
-
 // COMPONENT
 function Dashboard() {
   const [findData, setFindData] = useState([]);
@@ -59,6 +58,9 @@ function Dashboard() {
     const dates = upcomingDates()
 
     if (!pincodes.length) {
+      setProcessing(false)
+      setBusy(false)
+      console.log('Find Done! Find Again...')
       return
     }
     async function vaccineFinder() {
