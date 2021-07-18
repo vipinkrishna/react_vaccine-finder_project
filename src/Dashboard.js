@@ -50,7 +50,7 @@ function Dashboard() {
       var gain = context.createGain()
       oscillator.connect(gain)
       gain.connect(context.destination)
-      oscillator.frequency.value = 500
+      oscillator.frequency.value = 1200
       oscillator.start(context.currentTime)
       oscillator.stop(context.currentTime + (duration / 1000))
     }
@@ -81,7 +81,7 @@ function Dashboard() {
             const { date: datestamp, name, address, pincode, available_capacity_dose1, available_capacity_dose2, vaccine, min_age_limit } = session
             if (min_age_limit === age && ((dose === "FIRST") ? available_capacity_dose1 : available_capacity_dose2) > 0) {
               setFindData(prevState => [...prevState, { datestamp, pincode, name, address, vaccine, min_age_limit, available_capacity_dose1, available_capacity_dose2 }])
-              beep(500)
+              beep(200)
               await wait(500)
             }
           }

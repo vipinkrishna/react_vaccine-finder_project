@@ -1,32 +1,27 @@
 .card {
-  background-color      : white;
-  /* display            : grid; */
-  margin                : 10px;
-  padding               : 10px;
-  /* border-radius      : 10px; */
-  /* border             : 2px solid green; */
-  color                 : rgba(0, 0, 0, 0.54);
-  box-shadow            : 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  margin          : 10px;
+  padding         : 10px;
+  color           : grey;
+  box-shadow      : 1px 1px 6px 1px rgba(0, 0, 0, 0.5);
+  border-radius   : 5px;
 }
 
 .card>div {
-  margin          : 5px;
-  padding         : 5px;
-  background-color: ivory;
+  margin : 5px;
+  padding: 5px;
 }
 
 .card label {
-  color: rgba(0, 0, 0, 0.54);
+  color: grey;
 }
 
 .card>.date {
-  /* font-size  : 25px; */
   color      : blue;
   font-weight: bold;
 }
 
 .card>.vaccine {
-  /* font-size  : 25px; */
   color      : red;
   font-weight: bold;
 }
@@ -37,7 +32,7 @@
 }
 
 .card>.name {
-  color      : indigo;
+  color      : darkblue;
   font-weight: bold;
 }
 
@@ -47,19 +42,16 @@
 }
 
 .card>.ageLimit {
-  /* font-size  : 25px; */
   color      : purple;
   font-weight: bold;
 }
 
 .card>.dose1 {
-  /* font-size  : 25px; */
   color      : green;
   font-weight: bold;
 }
 
 .card>.dose2 {
-  /* font-size  : 25px; */
   color      : green;
   font-weight: bold;
 }
