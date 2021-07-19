@@ -25,7 +25,7 @@ function Dashboard() {
     if (found) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     }
-  });
+  }, [found]);
 
   // DELAY
   const wait = (milliseconds) => new Promise((settle) => { setTimeout(settle, milliseconds) })
@@ -89,9 +89,9 @@ function Dashboard() {
           let { sessions } = await response.json()
 
           for (let session of sessions) {
-            const { date: datestamp, name, address, pincode, available_capacity_dose1, available_capacity_dose2, vaccine, min_age_limit } = session
+            const { date: datestamp, name, address, pincode, available_capacity_dose1, available_capacity_dose2, vaccine, min_age_limit, fee_type } = session
             if (min_age_limit === age && ((dose === "FIRST") ? available_capacity_dose1 : available_capacity_dose2) > 0) {
-              setFindData(prevState => [...prevState, { datestamp, pincode, name, address, vaccine, min_age_limit, available_capacity_dose1, available_capacity_dose2 }])
+              setFindData(prevState => [...prevState, { datestamp, pincode, name, address, vaccine, min_age_limit, available_capacity_dose1, available_capacity_dose2, fee_type }])
               beep(200)
               await wait(300)
             }
@@ -110,11 +110,11 @@ function Dashboard() {
   return (
     <>
       <div className="dashboard">
-        {/* <Pincodes pincodes={pincodes} setPincodes={setPincodes} /> */}
         <Pincodes setPincodes={setPincodes} isEmpty={isEmpty} setIsEmpty={setIsEmpty} />
         <Age setAge={setAge} />
         <Dose setDose={setDose} />
         <Commands findHandler={findHandler} busy={busy} />
+        <div className="watermark">&copy; vipinkrishna 2021</div>
       </div>
       <div className="findResults">
         <FindResults data={findData} />

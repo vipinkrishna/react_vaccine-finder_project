@@ -55,3 +55,25 @@
   color      : green;
   font-weight: bold;
 }
+
+.card>.feeType {
+  font-weight: bold;
+}
+
+.Paid {
+  color           : white;
+  background-color: red;
+  display         : inline-block;
+  width           : 60px;
+  text-align      : center;
+  border-radius   : 20px;
+}
+
+.Free {
+  color           : white;
+  background-color: green;
+  display         : inline-block;
+  width           : 60px;
+  text-align      : center;
+  border-radius   : 20px;
+}

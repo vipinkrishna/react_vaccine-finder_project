@@ -29,15 +29,23 @@
     transform: scale(1);
   }
 
-  25% {
+  20% {
     transform: scale(1.05);
   }
 
-  50% {
+  40% {
     transform: scale(1);
   }
 
-  75% {
+  50% {
+    transform: scale(1.1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  80% {
     transform: scale(1.05);
   }
 

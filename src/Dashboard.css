@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-size: 18px;
+  font-size : 18px;
 }
 
 .dashboard {
@@ -10,7 +10,17 @@
 
 .findResults {
   /* background-color: red; */
-  display         : grid;
+  display      : grid;
   /* min-height: 100vh; */
-  /* padding: 10px; */
+  /* padding   : 10px; */
+}
+
+.watermark {
+  position: fixed;
+  bottom  : 15px;
+  right   : 15px;
+  opacity : 0.5;
+  z-index : 99;
+  color   : grey;
+  font-size: 12px;
 }
