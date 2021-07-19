@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { default as Pincodes } from './components/Pincodes';
 import { default as Age } from './components/Age';
@@ -9,14 +9,23 @@ import { default as FindResults } from './components/FindResults';
 // COMPONENT
 function Dashboard() {
   const [findData, setFindData] = useState([]);
+  const [found, setFound] = useState(false);
 
-  const [pincodes, setPincodes] = useState([671531, 671316]);
+  const [pincodes, setPincodes] = useState([]);
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
 
   const [processing, setProcessing] = useState(false);
 
   const [busy, setBusy] = useState(false);
+
+  const [isEmpty, setIsEmpty] = useState(false);
+
+  useEffect(() => {
+    if (found) {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
+    }
+  });
 
   // DELAY
   const wait = (milliseconds) => new Promise((settle) => { setTimeout(settle, milliseconds) })
@@ -42,6 +51,7 @@ function Dashboard() {
     setBusy(true)
     console.log('Find Starts!')
     setFindData([])
+    setFound(false)
 
     // BEEP SOUND
     var context = new window.AudioContext()
@@ -50,7 +60,7 @@ function Dashboard() {
       var gain = context.createGain()
       oscillator.connect(gain)
       gain.connect(context.destination)
-      oscillator.frequency.value = 1200
+      oscillator.frequency.value = 2500
       oscillator.start(context.currentTime)
       oscillator.stop(context.currentTime + (duration / 1000))
     }
@@ -60,7 +70,8 @@ function Dashboard() {
     if (!pincodes.length) {
       setProcessing(false)
       setBusy(false)
-      console.log('Find Done! Find Again...')
+      setIsEmpty(true)
+      console.log('Enter Pincode(s)! Find Again...')
       return
     }
     async function vaccineFinder() {
@@ -82,14 +93,15 @@ function Dashboard() {
             if (min_age_limit === age && ((dose === "FIRST") ? available_capacity_dose1 : available_capacity_dose2) > 0) {
               setFindData(prevState => [...prevState, { datestamp, pincode, name, address, vaccine, min_age_limit, available_capacity_dose1, available_capacity_dose2 }])
               beep(200)
-              await wait(500)
+              await wait(300)
             }
           }
-          await wait(100)
+          await wait(50)
         }
       }
       setProcessing(false)
       setBusy(false)
+      setFound(true)
       console.log('Find Done! Find Again...')
     }
     pincodes.length && dates.length && age && dose && vaccineFinder()
@@ -98,7 +110,8 @@ function Dashboard() {
   return (
     <>
       <div className="dashboard">
-        <Pincodes pincodes={pincodes} setPincodes={setPincodes} />
+        {/* <Pincodes pincodes={pincodes} setPincodes={setPincodes} /> */}
+        <Pincodes setPincodes={setPincodes} isEmpty={isEmpty} setIsEmpty={setIsEmpty} />
         <Age setAge={setAge} />
         <Dose setDose={setDose} />
         <Commands findHandler={findHandler} busy={busy} />

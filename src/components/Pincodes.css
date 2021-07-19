@@ -15,3 +15,33 @@
   color        : grey;
   box-shadow   : 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
+
+.empty {
+  animation: ripple 0.4s linear;
+}
+
+.empty::placeholder {
+  color: rgb(255, 128, 128);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.05);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

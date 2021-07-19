@@ -1,7 +1,6 @@
-// import { useState, useEffect } from 'react';
 import "./Pincodes.css";
 
-const Pincodes = ({ pincodes, setPincodes }) => {
+const Pincodes = ({ setPincodes, isEmpty, setIsEmpty }) => {
     const pincodesHandler = (e) => {
         const pincodes = e.target.value;
         let pincodesArray = pincodes.trim().split(/\D+/)
@@ -12,7 +11,7 @@ const Pincodes = ({ pincodes, setPincodes }) => {
 
     return (
         <div className="pincodes">
-            <input type="text" defaultValue="671531, 671316" className="pincodes-text" placeholder="Pincodes..." onChange={pincodesHandler} />
+            <input type="text" className={"pincodes-text " + (isEmpty ? "empty" : "")} placeholder="Enter your Pincode(s)..." onFocus={() => setIsEmpty(false)} onChange={pincodesHandler} />
         </div>
     );
 }

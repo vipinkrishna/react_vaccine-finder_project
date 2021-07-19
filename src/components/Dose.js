@@ -5,8 +5,8 @@ const Dose = ({ setDose }) => {
     return (
         <div className="dose">
             <select className="dose-select" onChange={(e) => setDose(e.target.value)}>
-                <option value="FIRST">FIRST</option>
-                <option value="SECOND">SECOND</option>
+                <option value="FIRST">Dose 1</option>
+                <option value="SECOND">Dose 2</option>
             </select>
         </div>
     );
