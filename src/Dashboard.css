@@ -1,6 +1,7 @@
 * {
-  box-sizing: border-box;
-  font-size : 18px;
+  box-sizing    : border-box;
+  font-size     : 18px;
+  font-family   : 'Poppins', sans-serif;
 }
 
 .dashboard {
@@ -9,18 +10,15 @@
 }
 
 .findResults {
-  /* background-color: red; */
-  display      : grid;
-  /* min-height: 100vh; */
-  /* padding   : 10px; */
+  display: grid;
 }
 
 .watermark {
-  position: fixed;
-  bottom  : 15px;
-  right   : 15px;
-  opacity : 0.5;
-  z-index : 99;
-  color   : grey;
+  position : fixed;
+  bottom   : 15px;
+  right    : 15px;
+  opacity  : 0.5;
+  z-index  : 99;
+  color    : grey;
   font-size: 12px;
 }

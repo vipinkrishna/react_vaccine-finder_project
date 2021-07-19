@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import "./FindResults.css";
 import { default as Card } from './Card';
 

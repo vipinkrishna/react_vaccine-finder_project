@@ -3,7 +3,7 @@
   margin          : 10px;
   padding         : 10px;
   color           : grey;
-  box-shadow      : 1px 1px 6px 1px rgba(0, 0, 0, 0.5);
+  box-shadow      : 0px 0px 10px rgba(0, 0, 0, 0.3);
   border-radius   : 5px;
 }
 

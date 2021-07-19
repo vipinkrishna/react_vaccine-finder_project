@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import "./Dose.css";
 
 const Dose = ({ setDose }) => {
