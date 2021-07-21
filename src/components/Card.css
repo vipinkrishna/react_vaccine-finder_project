@@ -17,12 +17,17 @@
 }
 
 .card>.date {
-  color      : blue;
+  color      : cornflowerblue;
   font-weight: bold;
 }
 
-.card>.vaccine {
-  color      : red;
+.card>.name {
+  color      : limegreen;
+  font-weight: bold;
+}
+
+.card>.address {
+  color      : lightseagreen;
   font-weight: bold;
 }
 
@@ -31,18 +36,13 @@
   font-weight: bold;
 }
 
-.card>.name {
-  color      : darkblue;
-  font-weight: bold;
-}
-
-.card>.address {
+.card>.ageLimit {
   color      : magenta;
   font-weight: bold;
 }
 
-.card>.ageLimit {
-  color      : purple;
+.card>.vaccine {
+  color      : red;
   font-weight: bold;
 }
 
@@ -61,19 +61,18 @@
 }
 
 .Paid {
-  color           : white;
   background-color: red;
-  display         : inline-block;
-  width           : 60px;
-  text-align      : center;
-  border-radius   : 20px;
 }
 
 .Free {
-  color           : white;
   background-color: green;
-  display         : inline-block;
-  width           : 60px;
-  text-align      : center;
-  border-radius   : 20px;
+}
+
+.Paid,
+.Free {
+  color        : white;
+  display      : inline-block;
+  width        : 60px;
+  text-align   : center;
+  border-radius: 20px;
 }

@@ -1,6 +1,5 @@
 .pincodes {
   background-color: white;
-  display         : grid;
 }
 
 .pincodes-text {
@@ -14,10 +13,11 @@
   padding      : 10px 20px;
   color        : grey;
   box-shadow   : 0px 0px 5px rgba(0, 0, 0, 0.5);
+  font-size    : 18px;
 }
 
 .empty {
-  animation: ripple 0.4s linear;
+  animation: ripple 0.8s linear;
 }
 
 .empty::placeholder {

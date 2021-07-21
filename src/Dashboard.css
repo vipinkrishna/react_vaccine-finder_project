@@ -1,12 +1,11 @@
 * {
   box-sizing    : border-box;
-  font-size     : 18px;
+  /* font-size  : 18px; */
   font-family   : 'Poppins', sans-serif;
 }
 
 .dashboard {
   min-height: 100vh;
-  display   : grid;
 }
 
 .findResults {
@@ -21,4 +20,18 @@
   z-index  : 99;
   color    : grey;
   font-size: 12px;
+}
+
+/* .addToHome {
+  position: absolute;
+  top     : 1px;
+  left    : 1px;
+  display : none;
+} */
+
+.inputs {
+  height         : 75vh;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-evenly;
 }
