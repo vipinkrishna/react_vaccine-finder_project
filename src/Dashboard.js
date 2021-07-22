@@ -11,22 +11,15 @@ function Dashboard() {
   const [findData, setFindData] = useState([]);
   const [found, setFound] = useState(false);
 
-  // const [pincodes, setPincodes] = useState([671531, 671316]);
-  const [pincodes, setPincodes] = useState([560076]);
+  const [pincodes, setPincodes] = useState([]);
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
 
   const [processing, setProcessing] = useState(false);
-
   const [busy, setBusy] = useState(false);
-
   const [isEmpty, setIsEmpty] = useState(false);
 
-  // const [parsedPincodes, setParsedPincodes] = useState("");
-
   // const [showAddToHomeButton, setShowAddToHomeButton] = useState(true);
-
-
 
   const [visitCount, setVisitCount] = useState(null);
 
@@ -37,43 +30,11 @@ function Dashboard() {
     }
   }, [found]);
 
-  useEffect(() => {
-    fetchVisitCount()
-    if (typeof (Storage) !== "undefined") {
-      // localStorage
-    } else {
-      // Sorry! No Web Storage support
-    }
-    return () => {
-
-    }
-  }, []);
-
   const fetchVisitCount = async () => {
     const response = await fetch('https://api.countapi.xyz/hit/vaccineFinder/')
     const result = await response.json()
     setVisitCount(result.value)
   }
-
-  // useEffect(() => {
-  //   console.log('useEffect()')
-  //   window.addEventListener('beforeinstallprompt', (e) => {
-  //     e.preventDefault();
-  //     let deferredPrompt = e;
-  //     console.log(deferredPrompt)
-  //     // addBtn.style.display = 'block';
-  //     // addBtn.style.display = 'none';
-  //     deferredPrompt.prompt();
-  //     deferredPrompt.userChoice.then((choiceResult) => {
-  //       if (choiceResult.outcome === 'accepted') {
-  //         console.log('User accepted the A2HS prompt');
-  //       } else {
-  //         console.log('User dismissed the A2HS prompt');
-  //       }
-  //       deferredPrompt = null;
-  //     });
-  //   });
-  // }, [showAddToHomeButton]);
 
   // DELAY
   const wait = (milliseconds) => new Promise((settle) => { setTimeout(settle, milliseconds) })
@@ -119,7 +80,7 @@ function Dashboard() {
       setProcessing(false)
       setBusy(false)
       setIsEmpty(true)
-      console.log('Enter Pincode(s)! Find Again...')
+      console.log('Enter Pincode(s) & Find Again...')
       return
     }
     async function vaccineFinder() {
@@ -151,6 +112,7 @@ function Dashboard() {
       setBusy(false)
       setFound(true)
       console.log('Find Done! Find Again...')
+      fetchVisitCount()
     }
     pincodes.length && dates.length && age && dose && vaccineFinder()
   }
@@ -168,7 +130,7 @@ function Dashboard() {
           <Dose setDose={setDose} />
         </div>
         <Commands findHandler={findHandler} busy={busy} />
-        <div className="watermark">vaccineFinder &copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
+        <div className="watermark">&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
         {/* <button className="addToHome" onClick={addToHomeHandler} style={{ display: showAddToHomeButton ? 'block' : 'none' }}>Add to Home Screen</button> */}
       </div>
       <div className="findResults">

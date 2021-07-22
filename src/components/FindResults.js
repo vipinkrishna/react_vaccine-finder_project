@@ -6,7 +6,6 @@ const FindResults = ({ data }) => {
         <div className="findData">
             {
                 data.map((item, key) => {
-                    // console.log("xxx: ", item, key)
                     return <Card item={item} key={key} />
                 })
             }
