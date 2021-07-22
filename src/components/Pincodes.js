@@ -22,7 +22,7 @@ const Pincodes = ({ setPincodes, isEmpty, setIsEmpty }) => {
 
     return (
         <div className="pincodes">
-            <input type="text" ref={inputRef} className={"pincodes-text " + (isEmpty ? "empty" : "")} placeholder="Search by Pincode(s)..." onFocus={() => setIsEmpty(false)} onChange={pincodesHandler} />
+            <input type="text" ref={inputRef} className={"pincodes-text " + (isEmpty ? "empty" : "")} placeholder="Type Pincode..." onFocus={() => setIsEmpty(false)} onChange={pincodesHandler} />
         </div>
     );
 }

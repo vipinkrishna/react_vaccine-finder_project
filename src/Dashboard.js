@@ -12,7 +12,7 @@ function Dashboard() {
   const [found, setFound] = useState(false);
 
   // const [pincodes, setPincodes] = useState([671531, 671316]);
-  const [pincodes, setPincodes] = useState([]);
+  const [pincodes, setPincodes] = useState([560076]);
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
 
@@ -32,15 +32,24 @@ function Dashboard() {
 
   useEffect(() => {
     if (found) {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
+      // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
+      window.scrollTo({ top: document.documentElement.clientHeight, behavior: "smooth" })
     }
   }, [found]);
 
   useEffect(() => {
-    fetchCount()
+    fetchVisitCount()
+    if (typeof (Storage) !== "undefined") {
+      // localStorage
+    } else {
+      // Sorry! No Web Storage support
+    }
+    return () => {
+
+    }
   }, []);
 
-  const fetchCount = async () => {
+  const fetchVisitCount = async () => {
     const response = await fetch('https://api.countapi.xyz/hit/vaccineFinder/')
     const result = await response.json()
     setVisitCount(result.value)
@@ -159,7 +168,7 @@ function Dashboard() {
           <Dose setDose={setDose} />
         </div>
         <Commands findHandler={findHandler} busy={busy} />
-        <div className="watermark">vaccineFinder &copy; vipinkrishna 2021 {visitCount && ("- visits:" + visitCount)}</div>
+        <div className="watermark">vaccineFinder &copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
         {/* <button className="addToHome" onClick={addToHomeHandler} style={{ display: showAddToHomeButton ? 'block' : 'none' }}>Add to Home Screen</button> */}
       </div>
       <div className="findResults">
