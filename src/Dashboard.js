@@ -9,26 +9,57 @@ import { default as FindResults } from './components/FindResults';
 // COMPONENT
 function Dashboard() {
   const [findData, setFindData] = useState([]);
-  const [found, setFound] = useState(false);
+  const [findEnds, setFindEnds] = useState(false);
+  // const [findDataEmpty, setFindDataEmpty] = useState(true);
 
   const [pincodes, setPincodes] = useState([]);
   const [age, setAge] = useState(18);
   const [dose, setDose] = useState("FIRST");
 
   const [processing, setProcessing] = useState(false);
-  const [busy, setBusy] = useState(false);
-  const [isEmpty, setIsEmpty] = useState(false);
+  const [isPincodeInputEmpty, setIsPincodeInputEmpty] = useState(false);
+  const [noResults, setNoResults] = useState(false);
 
   // const [showAddToHomeButton, setShowAddToHomeButton] = useState(true);
 
   const [visitCount, setVisitCount] = useState(null);
 
+  // const findDataLength = useCallback(() => findData.length, [findData.length])
+  // useEffect(() => {
+  //   if (findEnds) {
+  //     // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
+  //     window.scrollTo({ top: document.documentElement.clientHeight, behavior: "smooth" })
+  //     console.log('FOUND!', findEnds)
+  //   }
+  // }, [findEnds]);
+
+  // useEffect(() => {
+  //   if (findEnds && !findData.length) {
+  //     console.log('NO RESULTS')
+  //     setFindDataEmpty(false)
+  //     setFindEnds(false)
+  //   }
+  //   if (findEnds && findData.length) {
+  //     console.log('FOUND RESULTS')
+  //     setFindDataEmpty(false)
+  //   }
+  // }, [findEnds, findData.length]);
+
+
   useEffect(() => {
-    if (found) {
-      // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
-      window.scrollTo({ top: document.documentElement.clientHeight, behavior: "smooth" })
+    if (findEnds) {
+      if (!findData.length) {
+        console.log('Empty Result!')
+        setNoResults(true)
+      } else {
+        console.log('Got Result!')
+        window.scrollTo({ top: document.documentElement.clientHeight, behavior: "smooth" })
+      }
     }
-  }, [found]);
+  }, [findEnds, findData.length])
+
+
+
 
   const fetchVisitCount = async () => {
     const response = await fetch('https://api.countapi.xyz/hit/vaccineFinder/')
@@ -57,10 +88,11 @@ function Dashboard() {
       return
     }
     setProcessing(true)
-    setBusy(true)
     console.log('Find Starts!')
     setFindData([])
-    setFound(false)
+    // setFindDataEmpty(true)
+    setFindEnds(false)
+    setNoResults(false)
 
     // BEEP SOUND
     var context = new window.AudioContext()
@@ -78,9 +110,8 @@ function Dashboard() {
 
     if (!pincodes.length) {
       setProcessing(false)
-      setBusy(false)
-      setIsEmpty(true)
-      console.log('Enter Pincode(s) & Find Again...')
+      setIsPincodeInputEmpty(true)
+      console.log('Pincode(s) Missing! Find Again...')
       return
     }
     async function vaccineFinder() {
@@ -93,6 +124,9 @@ function Dashboard() {
             if (!response.ok) throw new Error(response.statusText)
           } catch (err) {
             console.warn(err.message)
+            setProcessing(false)
+            setFindEnds(true)
+            console.log('Pincode Error!')
             return
           }
           let { sessions } = await response.json()
@@ -109,9 +143,8 @@ function Dashboard() {
         }
       }
       setProcessing(false)
-      setBusy(false)
-      setFound(true)
-      console.log('Find Done! Find Again...')
+      setFindEnds(true)
+      console.log('Find Completed!')
       fetchVisitCount()
     }
     pincodes.length && dates.length && age && dose && vaccineFinder()
@@ -125,11 +158,12 @@ function Dashboard() {
     <>
       <div className="dashboard">
         <div className="inputs">
-          <Pincodes setPincodes={setPincodes} isEmpty={isEmpty} setIsEmpty={setIsEmpty} />
+          <Pincodes setPincodes={setPincodes} isPincodeInputEmpty={isPincodeInputEmpty} setIsPincodeInputEmpty={setIsPincodeInputEmpty} />
           <Age setAge={setAge} />
           <Dose setDose={setDose} />
         </div>
-        <Commands findHandler={findHandler} busy={busy} />
+        <Commands findHandler={findHandler} busy={processing} noResults={noResults} />
+        {/* <Commands findHandler={findHandler} busy={processing} findDataEmpty={findDataEmpty} /> */}
         <div className="watermark">&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
         {/* <button className="addToHome" onClick={addToHomeHandler} style={{ display: showAddToHomeButton ? 'block' : 'none' }}>Add to Home Screen</button> */}
       </div>

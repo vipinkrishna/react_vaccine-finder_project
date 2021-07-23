@@ -14,12 +14,12 @@
 
 .watermark {
   position : fixed;
-  bottom   : 15px;
-  right    : 15px;
+  bottom   : 8px;
+  right    : 8px;
   opacity  : 0.5;
   z-index  : 99;
   color    : grey;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* .addToHome {

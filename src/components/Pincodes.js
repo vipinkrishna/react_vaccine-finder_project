@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import "./Pincodes.css";
 
-const Pincodes = ({ setPincodes, isEmpty, setIsEmpty }) => {
+const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty }) => {
     const inputRef = useRef()
 
     useEffect(() => {
@@ -10,6 +10,14 @@ const Pincodes = ({ setPincodes, isEmpty, setIsEmpty }) => {
         const pincodesArray = pincodesStringToArray(pincodesString)
         setPincodes(pincodesArray)
     }, [setPincodes]);
+
+    useEffect(() => {
+        // inputRef.current.focus()
+        setTimeout(() => {
+            setIsPincodeInputEmpty(false)
+        }, 600);
+    }, [isPincodeInputEmpty, setIsPincodeInputEmpty]);
+
 
     const pincodesStringToArray = (data) => {
         const pincodesString = data
@@ -27,7 +35,8 @@ const Pincodes = ({ setPincodes, isEmpty, setIsEmpty }) => {
 
     return (
         <div className="pincodes">
-            <input type="text" ref={inputRef} className={"pincodes-text " + (isEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setIsEmpty(false)} onChange={pincodesHandler} />
+            <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onChange={pincodesHandler} />
+            {/* <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setIsPincodeInputEmpty(false)} onChange={pincodesHandler} /> */}
         </div>
     );
 }

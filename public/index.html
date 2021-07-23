@@ -41,18 +41,18 @@
     -->
 </body>
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(function (reg) {
-        console.log("SW Registered!");
-      }).catch(function (err) {
-        console.log("SW not Registered! ", err)
-      });
-  }
+  // if ('serviceWorker' in navigator) {
+  //   navigator.serviceWorker.register('sw.js')
+  //     .then(function (reg) {
+  //       console.log("SW Registered!");
+  //     }).catch(function (err) {
+  //       console.log("SW not Registered! ", err)
+  //     });
+  // }
 
-  window.addEventListener('beforeinstallprompt', (e) => {
-    console.log('BEFOREINSTALLPROMPT')
-  });
+  // window.addEventListener('beforeinstallprompt', (e) => {
+  //   console.log('BEFOREINSTALLPROMPT')
+  // });
 
 </script>
 

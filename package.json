@@ -2,7 +2,7 @@
   "name": "vk_react-vaccine-finder_code",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://vipinkrishna.github.io/apps/react/vaccine-finder/v1/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
