@@ -24,12 +24,12 @@
 
 @keyframes vibrator {
   25% {
-    box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.3);
-      transform : translateX(-5px);
-    }
-    
-    75% {
-      box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.3);
-      transform: translateX(5px);
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.3); */
+    transform : translateX(-10px);
+  }
+
+  75% {
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.3); */
+    transform : translateX(10px);
   }
 }

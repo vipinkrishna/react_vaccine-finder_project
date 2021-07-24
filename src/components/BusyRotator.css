@@ -5,6 +5,7 @@
 .rotator:after {
     border-radius    : 50%;
     border           : .3em solid grey;
+    /* border           : .3em solid limegreen; */
     border-left-color: transparent;
     content          : "";
     display          : block;

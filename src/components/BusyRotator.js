@@ -1,6 +1,6 @@
-import "./BusyText.css";
+import "./BusyRotator.css";
 
-const BusyText = ({ busy }) => {
+const BusyRotator = ({ busy }) => {
     return (
         <>
             {
@@ -10,4 +10,4 @@ const BusyText = ({ busy }) => {
     );
 }
 
-export default BusyText;
+export default BusyRotator;

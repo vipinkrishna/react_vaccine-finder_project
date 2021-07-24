@@ -1,10 +1,8 @@
 import "./Commands.css";
-import { default as BusyText } from './BusyText';
+import { default as BusyRotator } from './BusyRotator';
 
 // const Commands = ({ findHandler, busy, findDataEmpty }) => {
 const Commands = ({ findHandler, busy, noResults }) => {
-    // console.log("findDataEmpty: ", findDataEmpty)
-    // console.log('COMMANDS COMPONENT')
     let className = "find-button"
     if (noResults) {
         className += " noresults"
@@ -13,7 +11,7 @@ const Commands = ({ findHandler, busy, noResults }) => {
         <div className="commands">
             {/* <button className={"find-button " + (findDataEmpty ? "noresult" : "")} onClick={findHandler}><BusyText busy={busy} /></button> */}
             {/* <button className="find-button" onClick={findHandler}><BusyText busy={busy} /></button> */}
-            <button className={className} onClick={findHandler}><BusyText busy={busy} /></button>
+            <button className={className} onClick={findHandler}><BusyRotator busy={busy} /></button>
         </div>
     );
 }

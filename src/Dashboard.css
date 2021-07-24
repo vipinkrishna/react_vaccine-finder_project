@@ -22,6 +22,10 @@
   font-size: 10px;
 }
 
+.hideWatermark {
+  display: none;
+}
+
 /* .addToHome {
   position: absolute;
   top     : 1px;

@@ -20,6 +20,8 @@ function Dashboard() {
   const [isPincodeInputEmpty, setIsPincodeInputEmpty] = useState(false);
   const [noResults, setNoResults] = useState(false);
 
+  const [watermarkHidden, setWatermarkHidden] = useState(false);
+
   // const [showAddToHomeButton, setShowAddToHomeButton] = useState(true);
 
   const [visitCount, setVisitCount] = useState(null);
@@ -153,18 +155,23 @@ function Dashboard() {
   // const addToHomeHandler = () => {
   //   setShowAddToHomeButton(false)
   // }
+  let className = "watermark"
+  if (watermarkHidden) {
+    className += "  hideWatermark"
+  }
 
   return (
     <>
       <div className="dashboard">
         <div className="inputs">
-          <Pincodes setPincodes={setPincodes} isPincodeInputEmpty={isPincodeInputEmpty} setIsPincodeInputEmpty={setIsPincodeInputEmpty} />
+          <Pincodes setPincodes={setPincodes} isPincodeInputEmpty={isPincodeInputEmpty} setIsPincodeInputEmpty={setIsPincodeInputEmpty} setWatermarkHidden={setWatermarkHidden} />
           <Age setAge={setAge} />
           <Dose setDose={setDose} />
         </div>
         <Commands findHandler={findHandler} busy={processing} noResults={noResults} />
         {/* <Commands findHandler={findHandler} busy={processing} findDataEmpty={findDataEmpty} /> */}
-        <div className="watermark">&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
+        <div className={className}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
+        {/* <div className="watermark" style={watermarkStyle}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div> */}
         {/* <button className="addToHome" onClick={addToHomeHandler} style={{ display: showAddToHomeButton ? 'block' : 'none' }}>Add to Home Screen</button> */}
       </div>
       <div className="findResults">

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import "./Pincodes.css";
 
-const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty }) => {
+const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty, setWatermarkHidden }) => {
     const inputRef = useRef()
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty }) 
 
     return (
         <div className="pincodes">
-            <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onChange={pincodesHandler} />
+            <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} />
             {/* <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setIsPincodeInputEmpty(false)} onChange={pincodesHandler} /> */}
         </div>
     );
