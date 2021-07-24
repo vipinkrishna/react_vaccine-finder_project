@@ -1,5 +1,6 @@
 .pincodes {
   background-color: white;
+  /* background-color: red; */
 }
 
 .pincodes-text {
@@ -14,7 +15,26 @@
   color        : grey;
   box-shadow   : 0px 0px 5px rgba(0, 0, 0, 0.5);
   font-size    : 18px;
+
+  /* position: relative; */
+  /* padding-right: 40px; */
 }
+
+/* .pincodes-text-wrapper {
+  background-color: blue;
+  display: inline;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  display: block;
+  background-color: orange;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  right: 0;
+} */
 
 
 .empty {
@@ -25,11 +45,11 @@
 @keyframes vibrator {
   25% {
     /* box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.3); */
-    transform : translateX(-10px);
+    transform: translateX(-10px);
   }
 
   75% {
     /* box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.3); */
-    transform : translateX(10px);
+    transform: translateX(10px);
   }
 }

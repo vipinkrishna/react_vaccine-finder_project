@@ -35,7 +35,12 @@ const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty, se
 
     return (
         <div className="pincodes">
-            <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} />
+                <input type="search" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} />
+            {/* <div className="pincodes-text-wrapper"> */}
+                {/* <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} /> */}
+                {/* <span className="close-button"></span> */}
+            {/* </div> */}
+            {/* <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} /> */}
             {/* <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setIsPincodeInputEmpty(false)} onChange={pincodesHandler} /> */}
         </div>
     );

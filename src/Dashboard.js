@@ -168,7 +168,7 @@ function Dashboard() {
           <Age setAge={setAge} />
           <Dose setDose={setDose} />
         </div>
-        <Commands findHandler={findHandler} busy={processing} noResults={noResults} />
+        <Commands findHandler={findHandler} busy={processing} noResults={noResults} setNoResults={setNoResults} />
         {/* <Commands findHandler={findHandler} busy={processing} findDataEmpty={findDataEmpty} /> */}
         <div className={className}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
         {/* <div className="watermark" style={watermarkStyle}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div> */}
