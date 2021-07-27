@@ -60,8 +60,16 @@ function Dashboard() {
     }
   }, [findEnds, findData.length])
 
+  useEffect(() => {
+    readVisitCount()
+  }, []);
 
 
+  const readVisitCount = async () => {
+    const response = await fetch('https://api.countapi.xyz/get/vaccineFinder/')
+    const result = await response.json()
+    setVisitCount(result.value)
+  }
 
   const fetchVisitCount = async () => {
     const response = await fetch('https://api.countapi.xyz/hit/vaccineFinder/')
@@ -155,22 +163,26 @@ function Dashboard() {
   // const addToHomeHandler = () => {
   //   setShowAddToHomeButton(false)
   // }
-  let className = "watermark"
+  let watermarkClassName = "watermark"
+  let appTitleClassName = "appTitle"
   if (watermarkHidden) {
-    className += "  hideWatermark"
+    watermarkClassName += "  hideWatermark"
+    appTitleClassName += "  hideAppTitle"
   }
 
   return (
     <>
       <div className="dashboard">
-        <div className="inputs">
-          <Pincodes setPincodes={setPincodes} isPincodeInputEmpty={isPincodeInputEmpty} setIsPincodeInputEmpty={setIsPincodeInputEmpty} setWatermarkHidden={setWatermarkHidden} />
+        <div className="dataInputs">
+          <div className={appTitleClassName}>vaccineFinder<sup style={{fontSize:8, letterSpacing:0}}>VK</sup></div>
+          <Pincodes setPincodes={setPincodes} isPincodeInputEmpty={isPincodeInputEmpty} setIsPincodeInputEmpty={setIsPincodeInputEmpty} setWatermarkHidden={setWatermarkHidden} findHandler={findHandler} />
+          {/* <Pincodes setPincodes={setPincodes} isPincodeInputEmpty={isPincodeInputEmpty} setIsPincodeInputEmpty={setIsPincodeInputEmpty} setWatermarkHidden={setWatermarkHidden} /> */}
           <Age setAge={setAge} />
           <Dose setDose={setDose} />
         </div>
         <Commands findHandler={findHandler} busy={processing} noResults={noResults} setNoResults={setNoResults} />
         {/* <Commands findHandler={findHandler} busy={processing} findDataEmpty={findDataEmpty} /> */}
-        <div className={className}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
+        <div className={watermarkClassName}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div>
         {/* <div className="watermark" style={watermarkStyle}>&copy; vipinkrishna 2021 {visitCount && ("#" + visitCount)}</div> */}
         {/* <button className="addToHome" onClick={addToHomeHandler} style={{ display: showAddToHomeButton ? 'block' : 'none' }}>Add to Home Screen</button> */}
       </div>

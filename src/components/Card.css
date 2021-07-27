@@ -1,62 +1,70 @@
 .card {
-  background-color: white;
-  margin          : 5px;
-  padding         : 10px;
-  color           : grey;
-  box-shadow      : 0px 0px 3px rgba(0, 0, 0, 0.5);
-  border-radius   : 5px;
+  background-color   : white;
+  margin             : 5px;
+  padding            : 10px;
+  /* color           : grey; */
+  box-shadow         : 0px 0px 3px rgba(0, 0, 0, 0.5);
+  border-radius      : 5px;
 }
 
 .card>div {
-  margin : 5px;
-  padding: 5px;
+  margin     : 5px;
+  padding    : 5px;
+  display    : flex;
+  align-items: baseline;
 }
 
-.card label {
-  color: grey;
+.card>div span {
+  margin-left: 10px;
 }
 
-.card>.date {
-  color      : cornflowerblue;
+.card>div>label {
+  font-weight: bold;
+  color      : #aaa;
+  min-width: 80px;
+}
+
+.card>.date>span {
+  color      : darkorange;
   font-weight: bold;
 }
 
-.card>.name {
-  color      : limegreen;
+.card>.name>span {
+  color      : darksalmon;
   font-weight: bold;
 }
 
-.card>.address {
-  color      : lightseagreen;
-  font-weight: bold;
+.card>.address>span {
+  color         : darkseagreen;
+  /* font-weight: bold; */
 }
 
-.card>.pin {
+.card>.pin>span {
   color      : orange;
   font-weight: bold;
 }
 
-.card>.ageLimit {
+.card>.ageLimit>span {
   color      : magenta;
   font-weight: bold;
 }
 
-.card>.vaccine {
-  color      : red;
+.card>.vaccine>span {
+  color      : crimson;
   font-weight: bold;
 }
 
-.card>.dose1 {
+.card>.dose1>span {
   color      : green;
   font-weight: bold;
 }
 
-.card>.dose2 {
+.card>.dose2>span {
   color      : green;
   font-weight: bold;
 }
 
-.card>.feeType {
+.card>.feeType>span {
   font-weight: bold;
 }
 

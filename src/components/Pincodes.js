@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import "./Pincodes.css";
 
-const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty, setWatermarkHidden }) => {
+const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty, setWatermarkHidden, findHandler }) => {
     const inputRef = useRef()
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const Pincodes = ({ setPincodes, isPincodeInputEmpty, setIsPincodeInputEmpty, se
 
     return (
         <div className="pincodes">
-                <input type="search" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} />
+                <input type="search" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} />
             {/* <div className="pincodes-text-wrapper"> */}
                 {/* <input type="text" ref={inputRef} className={"pincodes-text " + (isPincodeInputEmpty ? "empty" : "")} placeholder="Search by Pincodes..." onFocus={() => setWatermarkHidden(true)} onBlur={() => setWatermarkHidden(false)} onChange={pincodesHandler} /> */}
                 {/* <span className="close-button"></span> */}
