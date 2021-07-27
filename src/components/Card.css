@@ -21,16 +21,16 @@
 .card>div>label {
   font-weight: bold;
   color      : #aaa;
-  min-width: 80px;
+  min-width  : 80px;
 }
 
 .card>.date>span {
-  color      : darkorange;
+  color      : dodgerblue;
   font-weight: bold;
 }
 
 .card>.name>span {
-  color      : darksalmon;
+  color      : darkseagreen;
   font-weight: bold;
 }
 
@@ -40,27 +40,27 @@
 }
 
 .card>.pin>span {
-  color      : orange;
+  color      : darkseagreen;
   font-weight: bold;
 }
 
 .card>.ageLimit>span {
-  color      : magenta;
+  color      : darkseagreen;
   font-weight: bold;
 }
 
 .card>.vaccine>span {
-  color      : crimson;
+  color      : darkseagreen;
   font-weight: bold;
 }
 
 .card>.dose1>span {
-  color      : green;
+  color      : darkseagreen;
   font-weight: bold;
 }
 
 .card>.dose2>span {
-  color      : green;
+  color      : darkseagreen;
   font-weight: bold;
 }
 
