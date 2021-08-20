@@ -1,5 +1,5 @@
 {
-  "short_name": "vaccineFinder",
+  "short_name": "vF",
   "name": "vaccineFinder",
   "icons": [
     {
@@ -18,15 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
-  "display": "fullscreen",
+  "start_url": "https://vipinkrishna.github.io/apps/react/vaccine-finder/v1/",
+  "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#000000",
-  "prefer_related_applications": false,
-  "related_applications": [
-    {
-      "platform": "play",
-      "id": "com.google.samples.apps.iosched"
-    }
-  ]
+  "background_color": "#FFFFFF"
 }
