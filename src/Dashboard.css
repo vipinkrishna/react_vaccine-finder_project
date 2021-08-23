@@ -1,13 +1,13 @@
 * {
-  box-sizing    : border-box;
-  /* font-size  : 18px; */
+  box-sizing       : border-box;
+  /* font-size     : 18px; */
   /* font-family   : 'Poppins', sans-serif; */
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  /* font-family: Roboto; */
-  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-font-family: Arial, Helvetica, sans-serif;
-font-family: serif;
-font-family: sans-serif;
+  /* font-family   : Verdana, Geneva, Tahoma, sans-serif; */
+  /* font-family   : Roboto; */
+  /* font-family   : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  font-family      : Arial, Helvetica, sans-serif;
+  font-family      : serif;
+  font-family      : sans-serif;
 }
 
 .dashboard {
@@ -20,8 +20,8 @@ font-family: sans-serif;
 
 .watermark {
   position : fixed;
-  bottom   : 8px;
-  right    : 8px;
+  bottom   : 10px;
+  right    : 10px;
   opacity  : 0.5;
   z-index  : 99;
   color    : grey;
@@ -49,12 +49,13 @@ font-family: sans-serif;
 }
 
 .appTitle {
-  position      : absolute;
-  top           : 15px;
-  left          : 50%;
-  transform     : translateX(-50%);
-  color         : rgba(200, 200, 200, 0.9);
-  letter-spacing: 2px;
-  font-weight   : bold;
-  font-size     : 20px;
+  position         : absolute;
+  top              : 15px;
+  left             : 50%;
+  transform        : translateX(-50%);
+  /* color         : rgba(200, 200, 200, 0.9); */
+  color            : rgba(100, 100, 100, 0.9);
+  letter-spacing   : 2px;
+  font-weight      : bold;
+  font-size        : 20px;
 }
