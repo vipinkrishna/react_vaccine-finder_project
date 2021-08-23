@@ -37,6 +37,7 @@ const Card = ({ item }) => {
             <div className="dose1"><label>1<sup>st</sup> Dose</label><span>{item.available_capacity_dose1}</span></div>
             <div className="dose2"><label>2<sup>nd</sup> Dose</label><span>{item.available_capacity_dose2}</span></div>
             <div className="feeType"><label>Fee</label><span className={item.fee_type}>{item.fee_type}</span></div>
+            <div className="book"><a href="https://selfregistration.cowin.gov.in/">Book Now</a></div>
         </div>
     );
 }
